@@ -2,29 +2,32 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+  height: 100vh;
 }
 
-main {
+.App {
+  height: 100%;
+}
+main{
   border: 1px solid #ddd;
   padding: 1rem;
-  /* margin-top: 1rem; */
-}
-
-.item-list {
-  display: flex;
-  flex-wrap: wrap;
+  border-bottom: none;
+  height: 100%;
 }
 
 .item-list .item {
-  width: 50%;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
 }
 
 .item-list .item img {
   width: 100%;
 }
 
-.dark, .dark a {
+.dark, .dark a, .btn {
   background: #333;
   color: #fff
 }
@@ -40,4 +43,8 @@ main {
 .navbar ul {
   display: flex;
   gap: 20px;
+}
+
+.skill-type {
+  margin: 5px;
 }
