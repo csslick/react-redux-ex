@@ -4,7 +4,7 @@ import { RootState } from '../store'
 export default function About() {
   // store에서 state를 가져오기
   let data = useSelector((state: RootState) => state)
-  let pokemon = data.pokemon;
+  // let pokemon = data.pokemon;
   let isDark = data.darkMode;
   console.log(data)
 
