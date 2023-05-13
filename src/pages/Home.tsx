@@ -15,7 +15,13 @@ export default function Home() {
         {pokemon.map(poke => (
           <div className="item" key={poke.id}>
             <h4>{poke.name}</h4>
-            <img src={poke.imgUrl} alt={poke.name} />
+            <div className="skills">
+            {poke.type.map((type, i) => {
+              return (
+                <span key={i} className="skill-type btn btn-outline-secondary">{type}</span>
+              )
+            })}
+            </div>
           </div>
         ))
         }
