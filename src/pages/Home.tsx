@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState, addItem } from '../store'
+import { RootState, addItem, removeItem } from '../store'
 
 export default function Home() {
   // store에서 state를 가져오기
@@ -46,7 +46,15 @@ export default function Home() {
                 })}
               </div>
             </div>
-            <button className="btn btn-danger">삭제</button>
+            <button 
+              onClick={
+                () => {
+                  // 클릭한 글번호 삭제
+                  dispatch(removeItem(poke.id))
+                }
+              }
+              className="btn btn-danger"
+            >삭제</button>
           </div>
         ))
         }
