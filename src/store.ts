@@ -38,14 +38,20 @@ const pokemon = createSlice({
   reducers: {
     // 여기에 필요한 액션과 리듀서를 정의
     addItem(state, action) {
-      console.log(action.payload)
-      // state = [...state, action.payload]
-      state.push(action.payload)
-      console.log(state, action.type)
+      const copy = [...state, action.payload]
+      return copy;
+    },
+    removeItem(state, action) {
+      // action.payload에서 글번호(id) 가져옴 
+      // console.log('store.removeItem: ', action.payload);
+      const copy = state.filter(item => {
+        return item.id !== action.payload 
+      })
+      console.log('변경된 state: ', copy)
+      return copy;
     }
-  },
+  }
 })
-
 
 
 const darkMode =  createSlice({
@@ -59,7 +65,7 @@ const darkMode =  createSlice({
 })
 
 export let { handleDarkMode } = darkMode.actions;
-export let { addItem } = pokemon.actions;
+export let { addItem, removeItem } = pokemon.actions;
 
 // store 설정을 내보냄
 export default configureStore({
