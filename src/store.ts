@@ -37,8 +37,16 @@ const pokemon = createSlice({
   ],
   reducers: {
     // 여기에 필요한 액션과 리듀서를 정의
+    addItem(state, action) {
+      console.log(action.payload)
+      // state = [...state, action.payload]
+      state.push(action.payload)
+      console.log(state, action.type)
+    }
   },
 })
+
+
 
 const darkMode =  createSlice({
   name: 'darkMode',
@@ -51,6 +59,7 @@ const darkMode =  createSlice({
 })
 
 export let { handleDarkMode } = darkMode.actions;
+export let { addItem } = pokemon.actions;
 
 // store 설정을 내보냄
 export default configureStore({
