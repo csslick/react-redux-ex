@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../store'
+import { useDispatch } from 'react-redux'
+// import { RootState } from '../store'
 import { handleDarkMode } from '../store';
 
 export default function Navbar() {
   // store에서 state를 가져오기
-  let data = useSelector((state: RootState) => state)
+  // let data = useSelector((state: RootState) => state)
   const dispatch = useDispatch()
 
   return (
